@@ -1,15 +1,9 @@
 from langchain_openai import ChatOpenAI
-import os
-from dotenv import load_dotenv
-load_dotenv()
+from src.config import settings
 
-llm=ChatOpenAI(
-    model="gpt-4o",
-    temperature=0.7,
+# System 2 LLM for SQL generation and final answer synthesis
+synthesis_llm = ChatOpenAI(
+    model=settings.SYNTHESIS_MODEL,
+    api_key=settings.OPENAI_API_KEY,
+    temperature=0.0,
 )
-
-from mcp.db_server import sql_read_query, sql_write_mutation
-
-tools=[sql_read_query, sql_write_mutation]
-
-llm_with_tools=llm.bind_tools(tools)
