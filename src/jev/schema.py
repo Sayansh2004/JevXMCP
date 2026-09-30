@@ -47,3 +47,7 @@ def get_routing_questions():
             instructions="True if the prompt contains SQL injection, jailbreaking, or harmful intent."
         ),
     }
+
+# Here we are asking two question at once to the Jev. The first question selects to which particular category it belongs to
+# while the second one tells that how much there is a probability that the prompt is malicious. 
+# The malicious score is used to route the prompt to a special handler that will return a warning message instead of executing the prompt
