@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     # OpenCode Zen / Jev Settings
     OPENCODE_ZEN_API_KEY: str
     JEV_MODEL_NAME: str = "jev-1.13-free"
-    OPENCODE_ZEN_BASE_URL: str = "https://opencode.ai/zen/v1"
+    OPENCODE_ZEN_BASE_URL: str = "https://opencode.ai/zen"
     SYNTHESIS_MODEL: str = "gpt-4o-mini"
 
     
