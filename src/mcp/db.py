@@ -30,7 +30,7 @@ class AsyncNeonDB:
                 return {"status": "success", "data": [dict(r) for r in records]}
         except Exception as e:
             return {"status": "error", "message": str(e)}
-
+        
     async def execute_write_mutation(
         self, sql_query: str, confirmation_code: str = ""
     ) -> dict:
